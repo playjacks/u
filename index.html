@@ -1,10 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Закрытый покерный клуб</title>
-
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -18,219 +14,242 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1596345781609399');
 fbq('track', 'PageView');
 </script>
+
 <noscript>
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1596345781609399&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Meta Pixel Code -->
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>♠ Приватный Покер Клуб — Узбекистан</title>
+
+<meta name="description" content="Закрытое покерное сообщество в Узбекистане. Доступ только по приглашению. Конфиденциальность и высокий уровень игры." />
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+--bg:#07090f;
+--bg2:#0b0f1a;
+--card: rgba(255,255,255,.06);
+--stroke: rgba(255,255,255,.14);
+--text: rgba(255,255,255,.92);
+--muted: rgba(255,255,255,.70);
+--muted2: rgba(255,255,255,.55);
+--accent:#d8b46a;
+--accent2:#f2d08b;
+--shadow: 0 20px 80px rgba(0,0,0,.55);
+--radius: 22px;
+}
 
+*{box-sizing:border-box}
 body{
-    font-family:'Montserrat',sans-serif;
-    background:radial-gradient(circle at center,#0b0b0b 0%,#000 100%);
-    color:#f5f5f5;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    overflow-x:hidden;
+margin:0;
+color:var(--text);
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+background:
+radial-gradient(1200px 600px at 15% 15%, rgba(216,180,106,.12), transparent 55%),
+radial-gradient(900px 520px at 80% 30%, rgba(242,208,139,.10), transparent 58%),
+linear-gradient(180deg, var(--bg), var(--bg2));
 }
 
-/* ЗОЛОТОЕ СВЕЧЕНИЕ */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    top:-50%;
-    left:-50%;
-    background:radial-gradient(circle,rgba(212,175,55,0.15),transparent 60%);
-    animation:rotateGlow 25s linear infinite;
-}
-@keyframes rotateGlow{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
+.wrap{
+width:min(1100px,92vw);
+margin:0 auto;
+padding:28px 0 80px;
 }
 
-/* ПОКЕРНЫЙ СТОЛ */
-.table-glow{
-    position:absolute;
-    width:900px;
-    height:900px;
-    background:radial-gradient(ellipse at center,
-        rgba(0,80,0,0.6) 0%,
-        rgba(0,40,0,0.9) 40%,
-        rgba(0,0,0,1) 75%);
-    border-radius:50%;
-    filter:blur(30px);
+.topbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+padding:14px 0 18px;
 }
 
-/* КАРТЫ */
-.cards{
-    position:absolute;
-    top:80px;
-    display:flex;
-    gap:30px;
-    perspective:1000px;
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+letter-spacing:.6px;
+text-transform:uppercase;
+font-weight:650;
+font-size:13px;
+color:var(--muted);
 }
 
-.card{
-    width:100px;
-    height:150px;
-    position:relative;
-    transform-style:preserve-3d;
-    animation:flip 1.5s ease forwards;
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 12px;
+border:1px solid var(--stroke);
+background:rgba(255,255,255,.04);
+border-radius:999px;
 }
 
-.card:nth-child(2){
-    animation-delay:0.5s;
+.dot{
+width:7px;height:7px;border-radius:99px;background:var(--accent);
 }
 
-.card-face{
-    position:absolute;
-    width:100%;
-    height:100%;
-    backface-visibility:hidden;
-    border-radius:12px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:32px;
-    font-weight:bold;
+.hero{
+margin-top:14px;
+padding:46px 34px;
+border-radius:var(--radius);
+border:1px solid rgba(255,255,255,.12);
+background:rgba(255,255,255,.04);
+box-shadow:var(--shadow);
 }
 
-.card-front{
-    background:white;
-    color:black;
-}
-
-.card-back{
-    background:linear-gradient(45deg,#111,#333);
-    transform:rotateY(180deg);
-}
-
-@keyframes flip{
-    from{transform:rotateY(180deg);}
-    to{transform:rotateY(0deg);}
-}
-
-/* КОНТЕЙНЕР */
-.container{
-    position:relative;
-    max-width:900px;
-    padding:70px 60px;
-    text-align:center;
-    background:rgba(10,10,10,0.92);
-    border-radius:25px;
-    border:1px solid rgba(212,175,55,0.5);
-    backdrop-filter:blur(20px);
-    box-shadow:0 0 40px rgba(212,175,55,0.2);
+.grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:28px;
 }
 
 h1{
-    font-family:'Playfair Display',serif;
-    font-size:42px;
-    margin-bottom:25px;
-    background:linear-gradient(45deg,#d4af37,#f5e6a3,#d4af37);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-size:200% auto;
-    animation:goldShine 3s linear infinite;
-}
-@keyframes goldShine{
-    to{background-position:200% center;}
+margin:0 0 14px;
+font-size:48px;
 }
 
-.description{
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:35px;
+.sub{
+font-size:16px;
+line-height:1.7;
+color:var(--muted);
+margin-bottom:22px;
 }
 
-.section-title{
-    font-size:22px;
-    margin-bottom:20px;
-    color:#d4af37;
+.quote{
+padding:16px 18px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.12);
+background:rgba(0,0,0,.18);
+color:var(--muted);
+line-height:1.7;
 }
 
-ul{list-style:none;margin-bottom:40px;}
-ul li{margin:12px 0;font-size:17px;transition:.3s;}
-ul li:hover{color:#d4af37;transform:translateX(5px);}
-
-/* КНОПКА */
-.telegram-btn{
-    display:inline-block;
-    padding:16px 45px;
-    font-size:18px;
-    font-weight:500;
-    text-decoration:none;
-    color:#000;
-    background:linear-gradient(45deg,#d4af37,#f5e6a3,#d4af37);
-    background-size:200% auto;
-    border-radius:50px;
-    transition:.4s;
-    box-shadow:0 0 25px rgba(212,175,55,0.6);
-}
-.telegram-btn:hover{
-    background-position:right center;
-    transform:translateY(-4px);
-    box-shadow:0 0 40px rgba(212,175,55,1);
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 18px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.14);
+background:linear-gradient(180deg,#d8b46a,#b28c46);
+color:#111;
+text-decoration:none;
+font-weight:650;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-    .cards{top:40px;}
-    .card{width:70px;height:105px;font-size:20px;}
-    h1{font-size:24px;}
-    .description{font-size:14px;}
-    .container{padding:40px 25px;}
-    .telegram-btn{width:100%;}
+.sideCard{
+border-radius:18px;
+border:1px solid rgba(255,255,255,.12);
+background:rgba(0,0,0,.22);
+padding:18px;
+}
+
+.list{
+list-style:none;
+padding:0;
+margin-top:12px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.list li{
+display:flex;
+gap:10px;
+padding:10px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.10);
+background:rgba(255,255,255,.03);
+}
+
+.star{
+color:var(--accent2);
+}
+
+.footer{
+margin-top:22px;
+display:flex;
+justify-content:space-between;
+color:var(--muted2);
+font-size:12px;
+}
+
+@media (max-width:860px){
+.grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="table-glow"></div>
+<div class="wrap">
 
-<div class="cards">
-    <div class="card">
-        <div class="card-face card-back"></div>
-        <div class="card-face card-front">A♠</div>
-    </div>
-    <div class="card">
-        <div class="card-face card-back"></div>
-        <div class="card-face card-front">K♠</div>
-    </div>
+<div class="topbar">
+<div class="brand">
+<span class="badge"><span class="dot"></span> Только по приглашению</span>
+<span>Приватный покерный клуб · Узбекистан</span>
+</div>
 </div>
 
-<div class="container">
-    <h1>♠ Закрытый покерный клуб в Узбекистане</h1>
+<section class="hero">
 
-    <div class="description">
-        Это не публичная комната.<br>
-        Это частное сообщество для тех, кто ценит высокий уровень игры, конфиденциальность и достойную атмосферу.<br><br>
-        Ежедневные игры без ограничений.<br>
-        Никакого шума. Только сильная поляна и уважение к каждому участнику.
-    </div>
+<div class="grid">
 
-    <div class="section-title">Привилегии клуба:</div>
+<div>
 
-    <ul>
-        <li>✦ Еженедельные привилегированные бонусы</li>
-        <li>✦ Активные столы 24/7</li>
-        <li>✦ Абсолютная анонимность и защита данных</li>
-        <li>✦ Персональные VIP-менеджеры</li>
-        <li>✦ Закрытый доступ исключительно по приглашению</li>
-    </ul>
+<h1>♠ Приватный Покер Клуб в Узбекистане</h1>
 
-    <a href="https://t.me/+K7rSM6HfE6I5MzUy" target="_blank" class="telegram-btn">
-        Перейти в Telegram
-    </a>
+<p class="sub">
+Это не публичная площадка.<br>
+Это закрытое покерное сообщество для игроков, которые ценят высокий уровень игры, конфиденциальность и премиальную атмосферу.
+</p>
+
+<div class="quote">
+Ежедневные игры без ограничений.<br>
+Никакого шума. Только сильные столы и уважение между игроками.
+</div>
+
+<br>
+
+<a class="btn" href="https://t.me/+K7rSM6HfE6I5MzUy" target="_blank">
+Войти через Telegram →
+</a>
+
+</div>
+
+<aside class="sideCard">
+
+<h3>Преимущества клуба</h3>
+
+<ul class="list">
+<li><span class="star">✦</span> Эксклюзивные еженедельные бонусы</li>
+<li><span class="star">✦</span> Активные столы 24/7</li>
+<li><span class="star">✦</span> Полная анонимность и защита данных</li>
+<li><span class="star">✦</span> Персональные VIP-менеджеры</li>
+<li><span class="star">✦</span> Доступ только по приглашению</li>
+</ul>
+
+<br>
+
+<a class="btn" href="https://t.me/+K7rSM6HfE6I5MzUy" target="_blank">
+Получить приглашение →
+</a>
+
+</aside>
+
+</div>
+
+<div class="footer">
+<div>Конфиденциальность · Уважение · Сильные столы</div>
+<div>© Private Poker Club · Узбекистан</div>
+</div>
+
+</section>
+
 </div>
 
 </body>
